@@ -15,7 +15,13 @@
 $(document).on('keypress', function (e) {
     if (channel.hasOwnProperty('data')) {
         if (e.which === 178) {
-            var CHALLENGES = localStorage.getItem('Popsaucing') === null ? {} : JSON.parse(localStorage.getItem('Popsaucing'));
+            var CHALLENGES = localStorage.getItem('PopSauce') === null ? {} : JSON.parse(localStorage.getItem('PopSauce'));
+
+            $(window).bind('storage', function (e) {
+                if(e.originalEvent.key === 'PopSauce') {
+                    CHALLENGES = localStorage.getItem('PopSauce') === null ? {} : JSON.parse(localStorage.getItem('PopSauce'));
+                }
+            });
 
             channel.socket.on('challenge', function (a) {
                 setTimeout(function () { 
@@ -28,11 +34,10 @@ $(document).on('keypress', function (e) {
                             (channel.data.challenge.image && channel.data.challenge.image.length && IMAGE.length && IMAGE === a.image);
                         });
 
-                        console.log('searching in ' + channel.data.challenge.category, CHALLENGES[channel.data.challenge.category]);
                         console.log('guess', GUESS);
 
                         if(GUESS) {
-                            channel.socket.emit('guess', GUESS.source);
+                            //channel.socket.emit('guess', GUESS.source);
                         }
                     }
                 }, 1001 + Math.random() * 501);
@@ -57,7 +62,7 @@ $(document).on('keypress', function (e) {
                     CHALLENGES[channel.data.challenge.category].push({quote:channel.data.challenge.hasOwnProperty('quote') && channel.data.challenge.quote.length ? new Hashes.SHA512().hex(channel.data.challenge.quote) : '', image:channel.data.challenge.hasOwnProperty('image') && channel.data.challenge.image.length ? new Hashes.SHA512().hex(channel.data.challenge.image) : '',source:a.source});
                 }
                 console.log('roundEnded', CHALLENGES[channel.data.challenge.category]);
-                localStorage.setItem('Popsaucing', JSON.stringify(CHALLENGES));
+                localStorage.setItem('PopSauce', JSON.stringify(CHALLENGES));
             });
 
             $(document).unbind('keypress');
