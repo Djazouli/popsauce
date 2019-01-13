@@ -5,16 +5,15 @@
 // @author      Geoffrey Migliacci
 // @version     0.1
 // @encoding    utf-8
-// @license     https://raw.githubusercontent.com/yerffeog/PopSauce/master/LICENSE
-// @icon        https://github.com/yerffeog/PopSauce/raw/master/PopSauce.png
-// @homepage    https://github.com/yerffeog/PopSauce
+// @license     https://raw.githubusercontent.com/yerffeog/popsauce/master/LICENSE.md
+// @icon        https://github.com/yerffeog/popsauce/raw/master/PopSauce.png
+// @homepage    https://github.com/yerffeog/popsauce
 // @twitterURL  https://twitter.com/yerffeog
-// @supportURL  https://github.com/yerffeog/PopSauce/issues
-// @updateURL   https://raw.githubusercontent.com/yerffeog/PopSauce/master/PopSauce.js
-// @downloadURL https://raw.githubusercontent.com/yerffeog/PopSauce/master/PopSauce.js
+// @supportURL  https://github.com/yerffeog/popsauce/issues
+// @updateURL   https://raw.githubusercontent.com/yerffeog/popsauce/master/PopSauce.js
+// @downloadURL https://raw.githubusercontent.com/yerffeog/popsauce/master/PopSauce.js
 // @match       http://popsauce.sparklinlabs.com/play/*
 // @require     https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
-// @require     https://cdnjs.cloudflare.com/ajax/libs/jshashes/1.0.7/hashes.min.js
 // @grant       none
 // @run-at      document-idle
 // ==/UserScript==
@@ -50,12 +49,7 @@ $(document).on('keypress', function (e) {
                             (channel.data.challenge.image && channel.data.challenge.image.length && IMAGE.length && IMAGE === a.image);
                     });
 
-                    if (GUESS) {
-                        $('#Source').text(GUESS.source.toUpperCase());
-                    }
-                    else {
-                        $('#Source').text('UNDEFINED');
-                    }
+                    $('#Source').text(GUESS ? GUESS.source.toUpperCase() : '');
                 }
             });
 
