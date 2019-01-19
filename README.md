@@ -6,7 +6,9 @@
 <p align="center">
   <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg"/></a>
   <a href="https://www.paypal.me/myerffoeg"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+  <a href="#"><img src="https://img.shields.io/github/downloads/myerffoeg/popsauce/total.svg"></a>
   <a href="https://twitter.com/myerffoeg"><img src="https://img.shields.io/twitter/follow/myerffoeg.svg?style=social&label=Follow"></a>
+  <a href="https://github/followers/myerffoeg.svg?label=Follow&style=social"><img src="/github/followers/myerffoeg.svg?label=Follow&style=social"></a>
 </p>
 
 ## Description

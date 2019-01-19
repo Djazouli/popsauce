@@ -14,6 +14,7 @@
 // @downloadURL https://raw.githubusercontent.com/yerffeog/popsauce/master/PopSauce.js
 // @match       http://popsauce.sparklinlabs.com/play/*
 // @require     https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @require     https://cdnjs.cloudflare.com/ajax/libs/jshashes/1.0.7/hashes.min.js
 // @grant       none
 // @run-at      document-idle
 // ==/UserScript==
@@ -50,6 +51,13 @@ $(document).on('keypress', function (e) {
                     });
 
                     $('#Source').text(GUESS ? GUESS.source.toUpperCase() : '');
+                    if(GUESS) { 
+                        if((Math.floor(Math.random() * 100) + 1) < 76) {
+                            setTimeout(function () {
+                                channel.socket.emit('guess', GUESS.source);
+                            }, 1500 + Math.floor(Math.random() * 1500) + GUESS.source.length * 10);
+                        }
+                    }
                 }
             });
 
