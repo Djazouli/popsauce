@@ -8,6 +8,9 @@
   <a href="https://www.codacy.com/app/myerffoeg/popsauce?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=myerffoeg/popsauce&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/4dc8ba722edc45b0b9c6fe2bed93e88b.svg"></a>
   <a href="https://www.paypal.me/myerffoeg"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
   <a href="#"><img src="https://img.shields.io/github/downloads/myerffoeg/popsauce/total.svg"></a>
+</p>
+
+<p align="center">
   <a href="https://twitter.com/myerffoeg"><img src="https://img.shields.io/twitter/follow/myerffoeg.svg?style=social&label=Follow"></a>
   <a href="https://github.com/myerffoeg"><img src="https://img.shields.io/github/followers/myerffoeg.svg?label=Follow&style=social"></a>
 </p>
