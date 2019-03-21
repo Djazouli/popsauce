@@ -19,6 +19,16 @@
 // @run-at      document-idle
 // ==/UserScript==
 
+/*$.ajax({
+    method: 'GET',
+    url: 'https://raw.githubusercontent.com/myerffoeg/popsauce/master/fr-FR.json',
+    cache: true,
+    dataType: 'json',
+    success: function (references) {
+        localStorage.setItem('PopSauce', JSON.stringify(references));
+    }
+});*/
+
 $(document).on('keypress', function (e) {
     if (channel.hasOwnProperty('data')) {
         if (e.which === 178) {
@@ -51,13 +61,6 @@ $(document).on('keypress', function (e) {
                     });
 
                     $('#Source').text(GUESS ? GUESS.source.toUpperCase() : '');
-                    if(GUESS) { 
-                        if((Math.floor(Math.random() * 100) + 1) < 76) {
-                            setTimeout(function () {
-                                channel.socket.emit('guess', GUESS.source);
-                            }, 1500 + Math.floor(Math.random() * 1500) + GUESS.source.length * 10);
-                        }
-                    }
                 }
             });
 
