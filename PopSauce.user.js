@@ -19,19 +19,22 @@
 // @run-at      document-idle
 // ==/UserScript==
 
-/*$.ajax({
-    method: 'GET',
-    url: 'https://raw.githubusercontent.com/myerffoeg/popsauce/master/fr-FR.json',
-    cache: true,
-    dataType: 'json',
-    success: function (references) {
-        localStorage.setItem('PopSauce', JSON.stringify(references));
-    }
-});*/
+if (localStorage.getItem('PopSauce') === null){
+    console.log("local storage is empty, fetching github...");
+    $.ajax({
+        method: 'GET',
+        url: 'https://raw.githubusercontent.com/Djazouli/popsauce/master/fr-FR.json',
+        cache: true,
+        dataType: 'json',
+        success: function (references) {
+            localStorage.setItem('PopSauce', JSON.stringify(references));
+        }
+    });
+}
 
 $(document).on('keypress', function (e) {
     if (channel.hasOwnProperty('data')) {
-        if (e.which === 178) {
+        if (e.which === 64) { // press @ on mac
             var CHALLENGES = localStorage.getItem('PopSauce') === null ? {} : JSON.parse(localStorage.getItem('PopSauce'));
             var GUESS = undefined;
 
