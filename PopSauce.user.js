@@ -6,7 +6,7 @@
 // @version     0.1
 // @encoding    utf-8
 // @license     https://raw.githubusercontent.com/yerffeog/popsauce/master/LICENSE.md
-// @icon        https://github.com/yerffeog/popsauce/raw/master/PopSauce.png
+// @icon        https://raw.githubusercontent.com/Djazouli/popsauce/master/PopSauce.png
 // @homepage    https://github.com/yerffeog/popsauce
 // @twitterURL  https://twitter.com/yerffeog
 // @supportURL  https://github.com/yerffeog/popsauce/issues
